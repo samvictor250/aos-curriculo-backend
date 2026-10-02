@@ -13,9 +13,12 @@ try {
     await sequelize.authenticate();
     console.log('Conexão com o NeonDB estabelecida com sucesso!');
     
+    await sequelize.sync({ alter: true });
+    console.log('Tabelas sincronizadas com sucesso!');
+    
     app.listen(port, () => {
         console.log(`Servidor rodando em http://localhost:${port}`);
     });
 } catch (error) {
-    console.error('Erro ao conectar com o banco de dados:', error);
+    console.error('Erro ao conectar ou sincronizar com o banco de dados:', error);
 }
