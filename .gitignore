@@ -1,5 +1,7 @@
 node_modules/
 
+*.postman_collection.json
+
 .env
 .env.local
 .env.*.local
