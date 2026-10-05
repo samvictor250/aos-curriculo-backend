@@ -31,7 +31,7 @@ try {
     await sequelize.authenticate();
     console.log('Conexão com o NeonDB estabelecida com sucesso!');
     
-    await sequelize.sync({ force: true });
+    await sequelize.sync();
     console.log('Tabelas sincronizadas com sucesso!');
     
     await seedDatabase();
